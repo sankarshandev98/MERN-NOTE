@@ -20,7 +20,7 @@ import {
   Tab,
   TabPanels,
   useColorModeValue,
-  TabPanel
+  TabPanel,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -95,14 +95,14 @@ const Public = () => {
           </Stack>
         </CardBody>
       </Card>
-      <IconButton
+      <Icon
         colorScheme="teal"
         placeholder="Call Segun"
         size="lg"
         icon={<MdAccountCircle />}
       >
         <Link to="/login">Employee Login</Link>
-      </IconButton>
+      </Icon>
     </Box>
   );
   return content;
