@@ -49,10 +49,10 @@ const Public = () => {
 
       <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
         <TabList>
-          <Tab>Features</Tab>
-          <Tab>Guide To Use This Web-App</Tab>
-          <Tab>Tech-Stack Used</Tab>
-          <Tab>Contact Me</Tab>
+          <Tab fontWeight="bold">Features</Tab>
+          <Tab fontWeight="bold">Guide To Use This Web-App</Tab>
+          <Tab fontWeight="bold">Tech-Stack Used</Tab>
+          <Tab fontWeight="bold">Contact Me</Tab>
         </TabList>
         <TabPanels p="1rem">
           <TabPanel>
@@ -72,10 +72,10 @@ const Public = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Login with three different credentials. Admin, Manager and
+                  Employee. Each roles have their own unique features. Example
+                  like Admin Can add new Employee and update their role and see
+                  given task and alote tasks to them.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem>
@@ -93,10 +93,10 @@ const Public = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Signup with valid and right format email and minimum 8 digit
+                  password combine with number, symbol and upper & lower case
+                  letter. Password stored in database with bcrypt format.
+                  Refresh & Access token with expiry time.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem>
@@ -114,10 +114,8 @@ const Public = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  RestFUL Api with express.JS, mongoose and stored in MongoDB
+                  Atlas.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem>
@@ -136,10 +134,14 @@ const Public = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   You can check the backend with this{" "}
-                  <a href="https://github.com/sankarshandev98/note-backend">
+                  <a
+                    href="https://github.com/sankarshandev98/note-backend"
+                    target="_blank"
+                  >
                     gitHub
                   </a>{" "}
-                  Link
+                  Link. Create the backend folder structure with Model View
+                  Controller architectural pattern in mind.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem>
@@ -157,10 +159,27 @@ const Public = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  For better code readibility and management with industry
+                  standards.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight={"bold"}
+                    >
+                      GLOBAL STATE MANAGEMENT WITH REACT-REDUX AND REDUX/TOOLKIT
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Using Api like createApi, fetchBaseQuery. Also Prefetching
+                  Without Hooks.
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
