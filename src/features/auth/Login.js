@@ -31,8 +31,7 @@ const Login = () => {
     setErrMsg("");
   }, [username, password]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       const { accessToken } = await login({ username, password }).unwrap();
       dispatch(setCredentials({ accessToken }));
@@ -105,7 +104,7 @@ const Login = () => {
           className="border-2 border-sky-500 rounded-md py-2"
         />
         <button
-          onSubmit={handleSubmit}
+          onClick={handleSubmit}
           className="my-4 bg-blue-500 shadow-lg shadow-blue-500/50 rounded-md py-2 text-lg sm:text-xl md:text-3xl"
         >
           Sign In
