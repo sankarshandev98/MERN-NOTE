@@ -127,7 +127,9 @@ const Login = () => {
         </div>
       </main>
       <footer className="py-4 flex items-center justify-around w-2/3 m-auto">
-        <MdHome size="50px" />
+        <Link to="/">
+          <MdHome size="50px" />
+        </Link>
         <Link to="/" className="text-lg sm:text-xl md:text-3xl">
           {" "}
           Back to Home
