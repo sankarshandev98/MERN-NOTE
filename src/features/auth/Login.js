@@ -6,6 +6,7 @@ import { useLoginMutation } from "./authApiSlice";
 import usePersist from "../../hooks/usePersist";
 import useTitle from "../../hooks/useTitle";
 import PulseLoader from "react-spinners/PulseLoader";
+import { MdHome } from "react-icons/md";
 
 const Login = () => {
   useTitle("Employee Login");
@@ -61,53 +62,76 @@ const Login = () => {
   if (isLoading) return <PulseLoader color={"#FFF"} />;
 
   const content = (
-    <section className="public">
-      <header>
-        <h1>Employee Login</h1>
+    <section className="mt-10 rounded-xl border-2 shadow-lg border-blue-200 w-11/12 m-auto md:w-2/4">
+      <header className="my-4">
+        <h1 className="text-3xl text-center sm:text-4xl md:text-5xl pt-4 font-serif">
+          Employee Login
+        </h1>
       </header>
-      <main className="login">
+      <main className="flex flex-col w-11/12 m-auto">
         <p ref={errRef} className={errClass} aria-live="assertive">
           {errMsg}
         </p>
 
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
-          <input
-            className="form__input"
-            type="text"
-            id="username"
-            ref={userRef}
-            value={username}
-            onChange={handleUserInput}
-            autoComplete="off"
-            required
-          />
+        <label
+          htmlFor="username"
+          className="my-4 text-lg sm:text-xl md:text-3xl"
+        >
+          Username:
+        </label>
+        <input
+          type="text"
+          id="username"
+          ref={userRef}
+          value={username}
+          onChange={handleUserInput}
+          autoComplete="off"
+          required
+          className="border-2 border-sky-500 rounded-md py-2"
+        />
 
-          <label htmlFor="password">Password:</label>
+        <label
+          htmlFor="password"
+          className="my-4 text-lg sm:text-xl md:text-3xl"
+        >
+          Password:
+        </label>
+        <input
+          type="password"
+          id="password"
+          onChange={handlePwdInput}
+          value={password}
+          required
+          className="border-2 border-sky-500 rounded-md py-2"
+        />
+        <button
+          onSubmit={handleSubmit}
+          className="my-4 bg-blue-500 shadow-lg shadow-blue-500/50 rounded-md py-2 text-lg sm:text-xl md:text-3xl"
+        >
+          Sign In
+        </button>
+        <div>
           <input
-            className="form__input"
-            type="password"
-            id="password"
-            onChange={handlePwdInput}
-            value={password}
-            required
+            type="checkbox"
+            id="persist"
+            onChange={handleToggle}
+            checked={persist}
+            className="w-5 h-5"
           />
-          <button className="form__submit-button">Sign In</button>
-
-          <label htmlFor="persist" className="form__persist">
-            <input
-              type="checkbox"
-              className="form__checkbox"
-              id="persist"
-              onChange={handleToggle}
-              checked={persist}
-            />
+          <label
+            htmlFor="persist"
+            className="text-lg pl-2 sm:text-xl md:text-3xl"
+          >
             Trust This Device
           </label>
-        </form>
+        </div>
       </main>
-      <footer>
-        <Link to="/">Back to Home</Link>
+      <footer className="py-4 flex items-center justify-around w-2/3 m-auto">
+        <MdHome size="50px" />
+        <Link to="/" className="text-lg sm:text-xl md:text-3xl">
+          {" "}
+          Back to Home
+        </Link>
       </footer>
     </section>
   );
