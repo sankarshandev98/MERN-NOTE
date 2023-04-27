@@ -5,7 +5,7 @@ import useTitle from "../../hooks/useTitle";
 const Welcome = () => {
   const { username, isManager, isAdmin } = useAuth();
 
-  useTitle(`techNotes: ${username}`);
+  useTitle(`Dashboard: ${username}`);
 
   const date = new Date();
   const today = new Intl.DateTimeFormat("en-US", {
@@ -14,7 +14,7 @@ const Welcome = () => {
   }).format(date);
 
   const content = (
-    <section className="welcome">
+    <section className="border-2 ">
       <p>{today}</p>
 
       <h1>Welcome {username}!</h1>

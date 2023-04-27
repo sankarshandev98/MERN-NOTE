@@ -1,16 +1,17 @@
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFileCirclePlus,
-  faFilePen,
-  faUserGear,
-  faUserPlus,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+  MdOutlineExitToApp,
+  MdOutlineNoteAdd,
+  MdPersonAddAlt1,
+  MdEditDocument,
+} from "react-icons/md";
+import { GrUserSettings } from "react-icons/gr";
+
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 import useAuth from "../hooks/useAuth";
 import PulseLoader from "react-spinners/PulseLoader";
+import { SiSimplenote } from "react-icons/si";
 
 const DASH_REGEX = /^\/dash(\/)?$/;
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/;
@@ -46,12 +47,8 @@ const DashHeader = () => {
   let newNoteButton = null;
   if (NOTES_REGEX.test(pathname)) {
     newNoteButton = (
-      <button
-        className="icon-button"
-        title="New Note"
-        onClick={onNewNoteClicked}
-      >
-        <FontAwesomeIcon icon={faFileCirclePlus} />
+      <button title="New Note" onClick={onNewNoteClicked}>
+        <MdOutlineNoteAdd size="40px" />
       </button>
     );
   }
@@ -64,7 +61,7 @@ const DashHeader = () => {
         title="New User"
         onClick={onNewUserClicked}
       >
-        <FontAwesomeIcon icon={faUserPlus} />
+        <MdPersonAddAlt1 size="40px" />
       </button>
     );
   }
@@ -74,7 +71,7 @@ const DashHeader = () => {
     if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
       userButton = (
         <button className="icon-button" title="Users" onClick={onUsersClicked}>
-          <FontAwesomeIcon icon={faUserGear} />
+          <GrUserSettings size="38px" />
         </button>
       );
     }
@@ -84,14 +81,14 @@ const DashHeader = () => {
   if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
     notesButton = (
       <button className="icon-button" title="Notes" onClick={onNotesClicked}>
-        <FontAwesomeIcon icon={faFilePen} />
+        <MdEditDocument size="40px" />
       </button>
     );
   }
 
   const logoutButton = (
     <button className="icon-button" title="Logout" onClick={sendLogout}>
-      <FontAwesomeIcon icon={faRightFromBracket} />
+      <MdOutlineExitToApp size="40px" />
     </button>
   );
 
@@ -116,12 +113,17 @@ const DashHeader = () => {
     <>
       <p className={errClass}>{error?.data?.message}</p>
 
-      <header className="dash-header">
-        <div className={`dash-header__container ${dashClass}`}>
+      <header className="">
+        <div
+          className={
+            `dash-header__container ${dashClass}` &&
+            "flex w-11/12 border-2 m-auto my-4 justify-between items-center"
+          }
+        >
           <Link to="/dash">
-            <h1 className="dash-header__title">techNotes</h1>
+            <SiSimplenote size="50px" />
           </Link>
-          <nav className="dash-header__nav">{buttonContent}</nav>
+          <nav>{buttonContent}</nav>
         </div>
       </header>
     </>
