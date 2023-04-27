@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAddNewNoteMutation } from "./notesApiSlice";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave } from "@fortawesome/free-solid-svg-icons";
+import { MdSave } from "react-icons/md";
 
 const NewNoteForm = ({ users }) => {
   const [addNewNote, { isLoading, isSuccess, isError, error }] =
@@ -58,7 +57,7 @@ const NewNoteForm = ({ users }) => {
           <h2>New Note</h2>
           <div className="form__action-buttons">
             <button className="icon-button" title="Save" disabled={!canSave}>
-              <FontAwesomeIcon icon={faSave} />
+              <MdSave size="40px" />
             </button>
           </div>
         </div>

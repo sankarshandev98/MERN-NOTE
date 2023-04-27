@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { MdEditDocument } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useGetUsersQuery } from "./usersApiSlice";
 import { memo } from "react";
@@ -26,7 +25,7 @@ const User = ({ userId }) => {
         <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
         <td className={`table__cell ${cellStatus}`}>
           <button className="icon-button table__button" onClick={handleEdit}>
-            <FontAwesomeIcon icon={faPenToSquare} />
+            <MdEditDocument size="40px" />
           </button>
         </td>
       </tr>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useUpdateNoteMutation, useDeleteNoteMutation } from "./notesApiSlice";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../hooks/useAuth";
+import { MdSave } from "react-icons/md";
+import { FaTrash } from "react-icons/fa";
 
 const EditNoteForm = ({ note, users }) => {
   const { isManager, isAdmin } = useAuth();
@@ -89,7 +89,7 @@ const EditNoteForm = ({ note, users }) => {
         title="Delete"
         onClick={onDeleteNoteClicked}
       >
-        <FontAwesomeIcon icon={faTrashCan} />
+        <FaTrash size="40px" />
       </button>
     );
   }
@@ -108,7 +108,7 @@ const EditNoteForm = ({ note, users }) => {
               onClick={onSaveNoteClicked}
               disabled={!canSave}
             >
-              <FontAwesomeIcon icon={faSave} />
+              <MdSave size="40px" />
             </button>
             {deleteButton}
           </div>

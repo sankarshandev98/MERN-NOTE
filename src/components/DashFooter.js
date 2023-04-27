@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { MdHome } from "react-icons/md";
 
 const DashFooter = () => {
   const { username, status } = useAuth();
@@ -19,7 +18,7 @@ const DashFooter = () => {
         title="Home"
         onClick={onGoHomeClicked}
       >
-        <FontAwesomeIcon icon={faHouse} />
+        <MdHome size="40px" />
       </button>
     );
   }

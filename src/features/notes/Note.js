@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { MdEditDocument } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useGetNotesQuery } from "./notesApiSlice";
 import { memo } from "react";
@@ -42,7 +41,7 @@ const Note = ({ noteId }) => {
 
         <td className="table__cell">
           <button className="icon-button table__button" onClick={handleEdit}>
-            <FontAwesomeIcon icon={faPenToSquare} />
+            <MdEditDocument size="40px" />
           </button>
         </td>
       </tr>

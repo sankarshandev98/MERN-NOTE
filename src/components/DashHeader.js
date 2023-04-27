@@ -47,7 +47,7 @@ const DashHeader = () => {
   let newNoteButton = null;
   if (NOTES_REGEX.test(pathname)) {
     newNoteButton = (
-      <button title="New Note" onClick={onNewNoteClicked}>
+      <button title="New Note" onClick={onNewNoteClicked} className="pr-2">
         <MdOutlineNoteAdd size="40px" />
       </button>
     );
@@ -56,11 +56,7 @@ const DashHeader = () => {
   let newUserButton = null;
   if (USERS_REGEX.test(pathname)) {
     newUserButton = (
-      <button
-        className="icon-button"
-        title="New User"
-        onClick={onNewUserClicked}
-      >
+      <button className="pr-2" title="New User" onClick={onNewUserClicked}>
         <MdPersonAddAlt1 size="40px" />
       </button>
     );
@@ -70,7 +66,7 @@ const DashHeader = () => {
   if (isManager || isAdmin) {
     if (!USERS_REGEX.test(pathname) && pathname.includes("/dash")) {
       userButton = (
-        <button className="icon-button" title="Users" onClick={onUsersClicked}>
+        <button className="pr-2" title="Users" onClick={onUsersClicked}>
           <GrUserSettings size="38px" />
         </button>
       );
@@ -80,7 +76,7 @@ const DashHeader = () => {
   let notesButton = null;
   if (!NOTES_REGEX.test(pathname) && pathname.includes("/dash")) {
     notesButton = (
-      <button className="icon-button" title="Notes" onClick={onNotesClicked}>
+      <button className="pr-2" title="Notes" onClick={onNotesClicked}>
         <MdEditDocument size="40px" />
       </button>
     );
