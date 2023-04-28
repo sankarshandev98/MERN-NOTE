@@ -61,7 +61,7 @@ const Login = () => {
   if (isLoading) return <PulseLoader color={"#FFF"} />;
 
   const content = (
-    <section className="mt-10 rounded-xl border-2 shadow-lg border-blue-200 w-11/12 m-auto md:w-2/4">
+    <section className="mt-10 rounded-xl border-2 shadow-md border-blue-300 w-11/12 m-auto sm:w-1/2">
       <header className="my-4">
         <h1 className="text-3xl text-center sm:text-4xl md:text-5xl pt-4 font-serif">
           Employee Login

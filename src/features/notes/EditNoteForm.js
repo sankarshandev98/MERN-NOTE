@@ -95,7 +95,7 @@ const EditNoteForm = ({ note, users }) => {
   }
 
   const content = (
-    <>
+    <div className="w-11/12">
       <p className={errClass}>{errContent}</p>
 
       <form className="form" onSubmit={(e) => e.preventDefault()}>
@@ -183,7 +183,7 @@ const EditNoteForm = ({ note, users }) => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 
   return content;

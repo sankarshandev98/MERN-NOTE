@@ -11,11 +11,11 @@ const UsersList = () => {
     isLoading,
     isSuccess,
     isError,
-    error
+    error,
   } = useGetUsersQuery("usersList", {
     pollingInterval: 60000,
     refetchOnFocus: true,
-    refetchOnMountOrArgChange: true
+    refetchOnMountOrArgChange: true,
   });
 
   let content;
@@ -33,22 +33,33 @@ const UsersList = () => {
       ids?.length && ids.map((userId) => <User key={userId} userId={userId} />);
 
     content = (
-      <table className="table table--users">
-        <thead className="table__thead">
-          <tr>
-            <th scope="col" className="table__th user__username">
-              Username
-            </th>
-            <th scope="col" className="table__th user__roles">
-              Roles
-            </th>
-            <th scope="col" className="table__th user__edit">
-              Edit
-            </th>
-          </tr>
-        </thead>
-        <tbody>{tableContent}</tbody>
-      </table>
+      <div className="w-11/12 sm:w-1/2 border-2 m-auto mt-10 rounded-lg border-blue-300">
+        <table className="w-full table-auto border-separate border-spacing-2">
+          <thead className="border-2 border-blue-500 bg-slate-200">
+            <tr>
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
+                Username
+              </th>
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
+                Roles
+              </th>
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
+                Edit
+              </th>
+            </tr>
+          </thead>
+          <tbody className="">{tableContent}</tbody>
+        </table>
+      </div>
     );
   }
 
