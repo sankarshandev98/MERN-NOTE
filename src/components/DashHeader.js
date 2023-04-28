@@ -113,7 +113,7 @@ const DashHeader = () => {
         <div
           className={
             `dash-header__container ${dashClass}` &&
-            "flex w-11/12 border-2 m-auto my-4 justify-between items-center"
+            "flex w-11/12 sm:w-1/2 border-2 m-auto my-4 justify-between items-center border-blue-300 py-3 px-4 shadow-md rounded-lg"
           }
         >
           <Link to="/dash">

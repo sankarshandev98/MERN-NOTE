@@ -10,31 +10,31 @@ const Welcome = () => {
   const date = new Date();
   const today = new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",
-    timeStyle: "long",
+    timeStyle: "short",
   }).format(date);
 
   const content = (
-    <section className="border-2 ">
-      <p>{today}</p>
+    <section className="w-11/12 sm:w-1/2 m-auto border-2 my-10 shadow-md rounded-lg border-blue-300 font-semibold text-lg text-center">
+      <p className="shadow-md rounded-md py-4">{today}</p>
 
-      <h1>Welcome {username}!</h1>
+      <h1 className="shadow-md rounded-md py-4">Welcome {username}!</h1>
 
-      <p>
+      <p className="shadow-md rounded-md py-4">
         <Link to="/dash/notes">View techNotes</Link>
       </p>
 
-      <p>
+      <p className="shadow-md rounded-md py-4">
         <Link to="/dash/notes/new">Add New techNote</Link>
       </p>
 
       {(isManager || isAdmin) && (
-        <p>
+        <p className="shadow-md rounded-md py-4">
           <Link to="/dash/users">View User Settings</Link>
         </p>
       )}
 
       {(isManager || isAdmin) && (
-        <p>
+        <p className="shadow-md rounded-md py-4">
           <Link to="/dash/users/new">Add New User</Link>
         </p>
       )}
