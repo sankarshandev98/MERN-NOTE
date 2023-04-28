@@ -46,26 +46,44 @@ const NotesList = () => {
       filteredIds.map((noteId) => <Note key={noteId} noteId={noteId} />);
 
     content = (
-      <div className="w-11/12 sm:w-1/2 border-2 m-auto my-4">
+      <div className="w-11/12 sm:w-1/2 border-2 m-auto mt-10 rounded-lg border-blue-300">
         <table>
-          <thead className="table__thead">
+          <thead className="border-2 border-blue-500 bg-slate-200">
             <tr>
-              <th scope="col" className="table__th note__status">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Username
               </th>
-              <th scope="col" className="table__th note__created">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Created
               </th>
-              <th scope="col" className="table__th note__updated">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Updated
               </th>
-              <th scope="col" className="table__th note__title">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Title
               </th>
-              <th scope="col" className="table__th note__username">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Owner
               </th>
-              <th scope="col" className="table__th note__edit">
+              <th
+                scope="col"
+                className="p-3 font-semibold tracking-wide text-left"
+              >
                 Edit
               </th>
             </tr>

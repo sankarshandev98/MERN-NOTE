@@ -57,7 +57,7 @@ const UsersList = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="">{tableContent}</tbody>
+          <tbody>{tableContent}</tbody>
         </table>
       </div>
     );
