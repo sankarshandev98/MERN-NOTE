@@ -1,38 +1,44 @@
-import { MdEditDocument } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
-import { useGetUsersQuery } from "./usersApiSlice";
-import { memo } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from 'react-router-dom'
+import { useGetUsersQuery } from './usersApiSlice'
+import { memo } from 'react'
 
 const User = ({ userId }) => {
-  const { user } = useGetUsersQuery("usersList", {
-    selectFromResult: ({ data }) => ({
-      user: data?.entities[userId],
-    }),
-  });
 
-  const navigate = useNavigate();
+    const { user } = useGetUsersQuery("usersList", {
+        selectFromResult: ({ data }) => ({
+            user: data?.entities[userId]
+        }),
+    })
 
-  if (user) {
-    const handleEdit = () => navigate(`/dash/users/${userId}`);
+    const navigate = useNavigate()
 
-    const userRolesString = user.roles.toString().replaceAll(",", ", ");
+    if (user) {
+        const handleEdit = () => navigate(`/dash/users/${userId}`)
 
-    const cellStatus = user.active ? "" : "table__cell--inactive";
+        const userRolesString = user.roles.toString().replaceAll(',', ', ')
 
-    return (
-      <tr className="table__row user">
-        <td className={`table__cell ${cellStatus}`}>{user.username}</td>
-        <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
-        <td className={`table__cell ${cellStatus}`}>
-          <button className="icon-button table__button" onClick={handleEdit}>
-            <MdEditDocument size="40px" />
-          </button>
-        </td>
-      </tr>
-    );
-  } else return null;
-};
+        const cellStatus = user.active ? '' : 'table__cell--inactive'
 
-const memoizedUser = memo(User);
+        return (
+            <tr className="table__row user">
+                <td className={`table__cell ${cellStatus}`}>{user.username}</td>
+                <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
+                <td className={`table__cell ${cellStatus}`}>
+                    <button
+                        className="icon-button table__button"
+                        onClick={handleEdit}
+                    >
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                    </button>
+                </td>
+            </tr>
+        )
 
-export default memoizedUser;
+    } else return null
+}
+
+const memoizedUser = memo(User)
+
+export default memoizedUser
