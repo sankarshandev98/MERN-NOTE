@@ -47,7 +47,7 @@ const NotesList = () => {
 
     content = (
       <div className="w-11/12 sm:w-1/2 border-2 m-auto mt-10 rounded-lg border-blue-300">
-        <table>
+        <table className="w-full table-auto border-separate border-spacing-2">
           <thead className="border-2 border-blue-500 bg-slate-200">
             <tr>
               <th
