@@ -55,7 +55,7 @@ const NewNoteForm = ({ users }) => {
           Create a New Note
         </h2>
 
-        <section className="flex">
+        <section className="flex w-11/12 justify-around">
           <label className="text-center font-sans text-2xl" htmlFor="title">
             Title:
           </label>
@@ -72,7 +72,7 @@ const NewNoteForm = ({ users }) => {
             onChange={onTitleChanged}
           />
         </section>
-        <section className="py-4 flex items-center justify-between">
+        <section className="py-4 flex items-center w-11/12 justify-around">
           <label className="text-center font-sans text-2xl" htmlFor="text">
             Text:
           </label>
@@ -87,7 +87,7 @@ const NewNoteForm = ({ users }) => {
             onChange={onTextChanged}
           />
         </section>
-        <section className="pb-6 flex items-center w-full justify-around">
+        <section className="pb-6 flex items-center w-11/12 justify-around">
           <label
             className="text-center pl-2 font-sans text-xl"
             htmlFor="username"
