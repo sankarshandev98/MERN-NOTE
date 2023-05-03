@@ -100,83 +100,99 @@ const EditUserForm = ({ user }) => {
     <>
       <p className={errClass}>{errContent}</p>
 
-      <form className="form" onSubmit={(e) => e.preventDefault()}>
-        <div className="form__title-row">
-          <h2>Edit User</h2>
-          <div className="form__action-buttons">
-            <button
-              className="icon-button"
-              title="Save"
-              onClick={onSaveUserClicked}
-              disabled={!canSave}
-            >
-              <MdSave size="40px" />
-            </button>
-            <button
-              className="icon-button"
-              title="Delete"
-              onClick={onDeleteUserClicked}
-            >
-              <FaTrash size="40px" />
-            </button>
-          </div>
-        </div>
-        <label className="form__label" htmlFor="username">
-          Username: <span className="nowrap">[3-20 letters]</span>
-        </label>
-        <input
-          className={`form__input ${validUserClass}`}
-          id="username"
-          name="username"
-          type="text"
-          autoComplete="off"
-          value={username}
-          onChange={onUsernameChanged}
-        />
-
-        <label className="form__label" htmlFor="password">
-          Password: <span className="nowrap">[empty = no change]</span>{" "}
-          <span className="nowrap">[4-12 chars incl. !@#$%]</span>
-        </label>
-        <input
-          className={`form__input ${validPwdClass}`}
-          id="password"
-          name="password"
-          type="password"
-          value={password}
-          onChange={onPasswordChanged}
-        />
-
-        <label
-          className="form__label form__checkbox-container"
-          htmlFor="user-active"
-        >
-          ACTIVE:
+      <div
+        className="border 2 flex flex-col m-auto gap-4 items-center justify-between w-11/12 sm:w-1/2 shadow-md border-blue-300 rounded-lg"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <h2 className="text-center py-4 font-sans text-3xl">Edit User</h2>
+        <section className="flex w-11/12 justify-around">
+          <label
+            className="form__label text-center font-sans text-2xl"
+            htmlFor="username"
+          >
+            Username: <span className="nowrap">[3-20 letters]</span>
+          </label>
           <input
-            className="form__checkbox"
-            id="user-active"
-            name="user-active"
-            type="checkbox"
-            checked={active}
-            onChange={onActiveChanged}
+            className={
+              `form__input ${validUserClass}` &&
+              "rounded-lg border-2 border-blue-300"
+            }
+            id="username"
+            name="username"
+            type="text"
+            autoComplete="off"
+            value={username}
+            onChange={onUsernameChanged}
           />
-        </label>
-
-        <label className="form__label" htmlFor="roles">
-          ASSIGNED ROLES:
-        </label>
-        <select
-          id="roles"
-          name="roles"
-          className={`form__select ${validRolesClass}`}
-          multiple={true}
-          size="3"
-          value={roles}
-          onChange={onRolesChanged}
+        </section>
+        <section className="py-4 flex items-center w-11/12 justify-around">
+          <label className="text-center font-sans text-2xl" htmlFor="password">
+            Password: <span className="nowrap">[empty = no change]</span>{" "}
+            <span className="nowrap">[4-12 chars incl. !@#$%]</span>
+          </label>
+          <input
+            className={
+              `form__input ${validPwdClass}` &&
+              "rounded-lg border-2 border-blue-300 ml-1"
+            }
+            id="password"
+            name="password"
+            type="password"
+            value={password}
+            onChange={onPasswordChanged}
+          />
+        </section>
+        <section className="pb-6 flex items-center w-11/12 justify-around">
+          <label
+            className="form__label form__checkbox-container text-center pl-2 font-sans text-xl"
+            htmlFor="user-active"
+          >
+            ACTIVE:
+            <input
+              className="form__checkbox py-2 px-4 border-blue-300 border rounded-md"
+              id="user-active"
+              name="user-active"
+              type="checkbox"
+              checked={active}
+              onChange={onActiveChanged}
+            />
+          </label>
+        </section>
+        <section className="pb-6 flex items-center w-11/12 justify-around">
+          <label className="text-center pl-2 font-sans text-xl" htmlFor="roles">
+            ASSIGNED ROLES:
+          </label>
+          <select
+            id="roles"
+            name="roles"
+            className={
+              `form__select ${validRolesClass}` &&
+              "py-2 px-4 border-blue-300 border rounded-md"
+            }
+            multiple={true}
+            size="3"
+            value={roles}
+            onChange={onRolesChanged}
+          >
+            {options}
+          </select>
+        </section>
+        <button
+          className="icon-button border-2 flex m-auto items-center py-1 px-10 mt-5 rounded-md border-blue-300"
+          title="Save"
+          onClick={onSaveUserClicked}
+          disabled={!canSave}
         >
-          {options}
-        </select>
-      </form>
+          <MdSave size="40px" /> <p>Save It !</p>
+        </button>
+        <button
+          className="icon-button border-2 flex m-auto items-center py-1 px-10 mb-5 rounded-md border-blue-300"
+          title="Delete"
+          onClick={onDeleteUserClicked}
+        >
+          <FaTrash size="40px" />
+        </button>
+      </div>
     </>
   );
 
