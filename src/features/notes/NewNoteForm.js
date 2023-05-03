@@ -50,7 +50,7 @@ const NewNoteForm = ({ users }) => {
   const content = (
     <>
       <p className={errClass}>{error?.data?.message}</p>
-      <div className="border 2 flex flex-col m-auto gap-4 items-center justify-between w-11/12 shadow-md border-blue-300 rounded-lg">
+      <div className="border 2 flex flex-col m-auto gap-4 items-center justify-between w-11/12 sm:w-1/2 shadow-md border-blue-300 rounded-lg">
         <h2 className="text-center py-4 font-sans text-3xl">
           Create a New Note
         </h2>

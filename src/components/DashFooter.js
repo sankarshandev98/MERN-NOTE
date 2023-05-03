@@ -24,7 +24,7 @@ const DashFooter = () => {
   }
 
   const content = (
-    <footer className="mt-10 border-2 py-3 px-4 text-center rounded-lg border-blue-300 w-11/12 sm:w-1/2 m-auto font-semibold text-lg shadow-md">
+    <footer className="mt-10 border-2 py-3 px-4 text-center rounded-lg border-blue-300 w-11/12 sm:w-1/2 mb-4 m-auto font-semibold text-lg shadow-md">
       {goHomeButton}
       <div className="flex justify-between my-3">
         <p>Current User:</p>
